@@ -27,9 +27,9 @@
   gulp.task('scripts', function () {
     return gulp.src('scripts/**/*.js')
       .pipe($.sourcemaps.init())
-      .pipe($.babel())
+      .pipe($.babel().on('error', $.util.log))
       .pipe($.wrapCommonjs({
-        baseDir: 'scripts',
+        relativePath: 'scripts',
         pathModifier: function (path) {
           return path.replace(/.js$/, '');
         }
@@ -53,7 +53,9 @@
       .pipe(reload({stream: true}));
   });
 
-  gulp.task('serve', ['scripts', 'templates', 'styles'], function () {
+  gulp.task('build', ['scripts', 'templates', 'styles'], function(){});
+
+  gulp.task('serve', ['build'], function () {
     browserSync({
       notify: false,
       port: 9000,
