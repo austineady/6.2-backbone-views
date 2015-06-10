@@ -1,6 +1,8 @@
 var Loading = Backbone.Model.extend({
-  text: '',
-  isLoading: false
+  defaults: {
+    text: "Submit",
+    isLoading: false
+  }
 });
 
 export default Loading;

@@ -3,7 +3,10 @@ var Like = Backbone.Model.extend({
     count: 0,
   },
   like: function() {
-    var count = this.attributes.count;
+    var count = this.get("count");
+    var newCount = count + 1;
+    this.set({"count": newCount});
+    console.log(newCount);
     // this.attributes.set(count, newCount);
     }
     // var newCount = (currentCount + 1);

@@ -19,3 +19,25 @@ body {
   background-color: $base-background-color;
   color: $base-font-color;
 }
+
+.likebox {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+}
+
+.like {
+  height: 50px;
+  width: 100px;
+}
+
+.loadingbox {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+}
+
+.loading {
+  height: 50px;
+  width: 100px;
+}

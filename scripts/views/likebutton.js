@@ -10,6 +10,7 @@ export default Backbone.View.extend({
   addCount: function(e) {
     e.preventDefault();
     this.model.like();
+    this.render();
   },
 
   initialize: function() {
